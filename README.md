@@ -1,4 +1,5 @@
-
+npm install
+npm start
 
 *install Redux:
 https://redux.js.org/introduction/installation
