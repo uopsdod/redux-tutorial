@@ -6,7 +6,7 @@ import UIComponent from '../component';
 const mapStateToProps = state => {
   console.log("container.js - mapStateToProps() called - state: " , state);    
   return {
-    // ...state // this will expose too many information to the client 
+    reduxState: state, // this will expose too many information to the client 
     myCount: state.MyPageOneState.count
   }
 }
@@ -14,8 +14,18 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   console.log("container.js - mapDispatchToProps() called");
   return {
-    getSth: () => dispatch(getSth()),
-    get123: () => dispatch({ type: 'INCREMENT' })
+      getSth: () => dispatch(getSth()),
+      // getSth: dispatch(() => {
+      //   return function(dispatch, getState) {
+      //     getSth();
+      //   }
+      // }),
+      // getSth: dispatch(() => {
+      //   return function(dispatch, getState) {
+      //     getSth();
+      //   }
+      // }),
+      get123: () => dispatch({ type: 'INCREMENT' })
   }
 }
 

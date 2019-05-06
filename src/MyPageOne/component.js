@@ -13,25 +13,23 @@ class UIComponent extends Component {
 	getSth = (event) =>
 	{
 		console.log("UIComponent.js - getSth() called");
-		// redux store function 
+		console.log("UIComponent.js - getSth() called - this.props.getSth: " , this.props.getSth);
+		// call redux store function 
+		// it will eventually update the Redux state and this UI will reflect the this.props.myCount change automatically
 		this.props.getSth();
-		// TODO: make it wait for the result somehow ... some asyn stuff required 
-		console.log("UIComponent.js - getSth() this.props: " , this.props);
-		console.log("UIComponent.js - getSth() this.props.MyPageOneState: " , this.props.MyPageOneState);
-		
-		this.setState({
-			count : this.props.myCount
-		});
+
+		console.log("UIComponent.js - getSth() called - this.props: " , this.props);
+
 	}
 
 	render() {
-
 		return (
 			<div>
 				<h1>UIComponent</h1>
                 <button onClick={this.getSth}>getSth</button>
-				<h3>stateFromReduxStore: {this.state.count}</h3>
-				{/* <h3>State from Redux store : {this.state}</h3> */}
+				<h3>stateFromReduxStore(this.props.myCount): {this.props.myCount}</h3>
+				<h3>stateFromReduxStore(this.props): </h3>
+				{JSON.stringify(this.props)}
 			</div>
 		);
 	}	
