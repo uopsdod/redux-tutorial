@@ -40,7 +40,7 @@ npm start
 }
 ```
 
-3. How to connect different moduls in a Redux Container 
+3. Connect different modules in a Redux Container 
 
 3-1. decide how to map the state returned from reducers to your UI component
 ```javascript
