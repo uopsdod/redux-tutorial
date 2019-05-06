@@ -30,7 +30,7 @@ npm start
   )
 ```
 
-2. Include the your Redux Comtainer in the entry App component
+2. Include the your Redux Container in the entry App component
 ```javascript
   import MyPageOneContainer from './MyPageOne/redux/container';
   function App() {
