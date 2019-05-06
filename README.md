@@ -70,6 +70,7 @@ npm start
   )(UIComponent)
 ```
 
+
 ## How data flows in a Redux framework: 
 
 1. An user clicks a button ex. a getSth button defined in the component.js
