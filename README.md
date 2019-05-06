@@ -129,7 +129,7 @@ npm start
 		return (
 			<div>
 				<h1>UIComponent - MyPageOne</h1>
-                <button onClick={this.getSth}>getSth</button>
+                		<button onClick={this.getSth}>getSth</button>
 				<h3>stateFromReduxStore(this.props.myCount): {this.props.myCount}</h3>
 				<h3>stateFromReduxStore(this.props): </h3>
 				{JSON.stringify(this.props)}
