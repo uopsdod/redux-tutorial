@@ -73,7 +73,7 @@ npm start
 
 ## How data flows in a Redux framework: 
 
-1. An user clicks a button ex. a getSth button defined in the component.js
+1. An user clicks a button(ex. a getSth button) defined in the component.js
 
 ![getSth button](public/getSth_button.png)
 
