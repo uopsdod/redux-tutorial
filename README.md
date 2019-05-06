@@ -96,7 +96,7 @@ npm start
 
 4. Behind the scene, once the dispatch(...) method is invoked, the Redux will take the result of the getSth() action as an input, and pass it to the list of reducers you added in the very beginning. 
 
-5. The recuder methods defined in the reducers.js will catch the result of the getSth() action and update the Redux store accordingly. 
+5. The recuder methods defined in the reducers.js will catch the result of the getSth() action and return the new Redux store. 
 ```javascript
   function myReducer(state, action) {
     console.log("reducer.js - myReducer() called - action: " , action);  
