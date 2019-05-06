@@ -1,5 +1,7 @@
 # How to run this project
 
+download and install Node.js
+
 npm install
 
 npm start
