@@ -135,6 +135,10 @@ npm start
 	}	
 ```
 
+8. Result 
+
+![getSth result](public/getSth_result.png)
+
 
 
 
