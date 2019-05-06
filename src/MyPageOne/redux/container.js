@@ -20,9 +20,9 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const MyUIComponent = connect(
+const MyPageOneContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(UIComponent)
 
-export default MyUIComponent
+export default MyPageOneContainer

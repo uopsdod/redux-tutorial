@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import MyPageOneUIComponent from './MyPageOne/redux/container';
+import MyPageOneContainer from './MyPageOne/redux/container';
 
 function App() {
   return (
     <div className="App">
-      <MyPageOneUIComponent/>
+      <MyPageOneContainer/>
     </div>
   );
 }
