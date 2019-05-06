@@ -54,7 +54,7 @@ npm start
   }
 ```
 
-3-2. decide how to map the functions to dispatched functions 
+3-2. decide how to map the dispatched functions to your UI component
 ```javascript
   const mapDispatchToProps = dispatch => {
     return {
