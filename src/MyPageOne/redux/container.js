@@ -14,8 +14,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   console.log("container.js - mapDispatchToProps() called");
   return {
-      getSth: () => dispatch(getSth()),
-      get123: () => dispatch({ type: 'INCREMENT' })
+      // when you call dispatch( 'your action result data' ), Redux will send the action result to the list of reducers you added at the very beginning. 
+      getSth: () => dispatch(getSth())
+      // ,get123: () => dispatch({ type: 'INCREMENT' })
   }
 }
 

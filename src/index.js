@@ -3,17 +3,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// Redux libraries
 import { render } from 'react-dom'
+
+// Redux - libraries
 import { Provider } from 'react-redux'
 import { createStore, combineReducers } from 'redux'
-// Redux my libraries
+// Redux - libraries - Custom ones 
 import MyPageOneReducer from './MyPageOne/redux/reducers'
 
-// combineReducers method seems to do lots of stuff that I don't understand 
+// Redux - create and initialize your Redux store here 
+//         reducers are global in Redux; every action will go through all reducers every time 
 const store = createStore(combineReducers({ MyPageOneState : MyPageOneReducer}))
 
 render(
+    // Allow your App component to use Redux Store
     <Provider store={store}>
       <App />
     </Provider>,
