@@ -15,16 +15,6 @@ const mapDispatchToProps = dispatch => {
   console.log("container.js - mapDispatchToProps() called");
   return {
       getSth: () => dispatch(getSth()),
-      // getSth: dispatch(() => {
-      //   return function(dispatch, getState) {
-      //     getSth();
-      //   }
-      // }),
-      // getSth: dispatch(() => {
-      //   return function(dispatch, getState) {
-      //     getSth();
-      //   }
-      // }),
       get123: () => dispatch({ type: 'INCREMENT' })
   }
 }
