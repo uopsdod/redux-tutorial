@@ -70,5 +70,72 @@ npm start
   )(UIComponent)
 ```
 
+## How data flows in a Redux framework: 
+
+1. An user clicks a button ex. a getSth button defined in the component.js
+
+2. that button executes the following code in the component.js 
+```javascript
+  this.props.getSth();
+```
+
+3. It checks the mapDispatchToProps function defined in the container.js to find its corresponding dispatched function
+```javascript
+  const mapDispatchToProps = dispatch => {
+    console.log("container.js - mapDispatchToProps() called");
+    return {
+        getSth: () => dispatch(getSth())
+    }
+  }
+```
+
+4. Behind the scene, once the dispatch(...) method is invoked, the Redux will take the result of the getSth() action as an input, and pass it to the list of reducers you added in the very beginning. 
+
+5. The recuder methods defined in the reducers.js will catch the result of the getSth() action and update the Redux store accordingly. 
+```javascript
+  function myReducer(state, action) {
+    console.log("reducer.js - myReducer() called - action: " , action);  
+    console.log("reducer.js - myReducer() called - old state: " , state);  
+    if (typeof state === 'undefined') {
+      return initialState
+    }
+
+    let myState = Object.assign({}, state);
+    myState.count = (myState.count + 1);
+    console.log("reducer.js - myReducer() called - new state: " , myState);  
+    return myState;
+  }
+```
+
+6. The retured state from reducers will be passed to the mapStateToProps function defined in the container.js. Here, you decide how to map this state to props which can be used in the UI. 
+```javascript
+  const mapStateToProps = state => {
+    console.log("container.js - mapStateToProps() called - state: " , state);    
+    return {
+      reduxState: state, // this will expose too many information to the client 
+      myCount: state.MyPageOneState.count
+    }
+  }
+```
+
+7. Finally, in the UI defined in the component.js, it renders the page according to the changed value in the this.props.myCount. 
+```javascript
+	render() {
+		return (
+			<div>
+				<h1>UIComponent - MyPageOne</h1>
+                <button onClick={this.getSth}>getSth</button>
+				<h3>stateFromReduxStore(this.props.myCount): {this.props.myCount}</h3>
+				<h3>stateFromReduxStore(this.props): </h3>
+				{JSON.stringify(this.props)}
+			</div>
+		);
+	}	
+```
+
+
+
+
+
 
 
