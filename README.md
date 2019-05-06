@@ -62,7 +62,7 @@ npm start
 ```
 
 
-3-3. connect what you did in 3-1 and 3-2 with your UI component, so that you can access the Reudx data and function in the UI
+3-3. connect what you did in 3-1 and 3-2 with your UI component, so that you can access the Redux store and function in the UI
 ```javascript
   const MyPageOneContainer = connect(
     mapStateToProps,
