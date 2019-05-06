@@ -112,7 +112,7 @@ npm start
   }
 ```
 
-6. The retured state from reducers will be passed to the mapStateToProps function defined in the container.js. Here, you decide how to map this state to props which can be used in the UI. 
+6. The retured state from reducers will be passed to the mapStateToProps function defined in the container.js. Here, you define how to map this state to props which can be used in the UI. 
 ```javascript
   const mapStateToProps = state => {
     console.log("container.js - mapStateToProps() called - state: " , state);    
