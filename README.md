@@ -2,6 +2,10 @@
 
 download and install Node.js
 
+git clone this project
+
+cd redux-tutorial
+
 npm install
 
 npm start
