@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getUserList } from './actions'
+import { getSth } from './actions'
 // import TodoList from '../components/TodoList'
 import UIComponent from '../component';
 
@@ -15,8 +15,7 @@ const mapDispatchToProps = dispatch => {
   console.log("container.js - mapDispatchToProps() called");
   return {
       // when you call dispatch( 'your action result data' ), Redux will send the action result to the list of reducers you added at the very beginning. 
-      getUserList: () => getUserList(dispatch)
-      // getSth: () => dispatch(getSth())
+      getSth: () => dispatch(getSth())
       // ,get123: () => dispatch({ type: 'INCREMENT' })
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class UIComponent extends Component {
 
 	constructor(props){
@@ -9,39 +10,26 @@ class UIComponent extends Component {
 		}	
 	}
 
-	getUserList = (event) =>
+	getSth = (event) =>
 	{
-		console.log("UIComponent.js - getUserList() called");
-		console.log("UIComponent.js - getUserList() called - this.props.getSth: " , this.props.getUserList);
+		console.log("UIComponent.js - getSth() called");
+		console.log("UIComponent.js - getSth() called - this.props.getSth: " , this.props.getSth);
 		// call redux store function 
 		// it will eventually update the Redux state and this UI will reflect the this.props.myCount change automatically
-		this.props.getUserList();
+		this.props.getSth();
 
-		console.log("UIComponent.js - getUserList() called - this.props: " , this.props);
+		console.log("UIComponent.js - getSth() called - this.props: " , this.props);
 
 	}
-	
-
 
 	render() {
 		return (
 			<div>
-				<h1>Docker demo - web</h1>
-                <button onClick={this.getUserList}>get user list</button>
-
-				{this.props.reduxState.MyPageOneState.users && 
-				this.props.reduxState.MyPageOneState.users.map(user => (
-					<div class="margin-auto">
-					<div class="flex-container-flex-start">
-					<div class="flex-container">
-						<img class="myavatar" src='https://i.imgur.com/FEVDPBj.jpg' /> 
-						<button class="ui basic button">{user.name}</button>
-						<button class="ui basic button">{user.email}</button>					
-					</div>
-					</div>
-					</div>
-				))}
-
+				<h1>UIComponent - MyPageOne</h1>
+                <button onClick={this.getSth}>getSth</button>
+				<h3>stateFromReduxStore(this.props.myCount): {this.props.myCount}</h3>
+				<h3>stateFromReduxStore(this.props): </h3>
+				{JSON.stringify(this.props)}
 			</div>
 		);
 	}	
