@@ -5,13 +5,8 @@ class UIComponent extends Component {
 	constructor(props){
 		super(props);	
 		this.state = {
-			count : null,
-			name : ""
+		    count : null
 		}	
-	}
-
-	componentDidMount(){
-		this.getUserList();
 	}
 
 	getUserList = (event) =>
@@ -25,19 +20,6 @@ class UIComponent extends Component {
 		console.log("UIComponent.js - getUserList() called - this.props: " , this.props);
 
 	}
-
-	addUser = (event) =>
-	{
-		console.log("UIComponent.js - addUser() called");
-		this.props.addUser(this.state.name);
-
-	}
-
-	handleNameChange = (event) =>
-	{
-		console.log("UIComponent.js - handleNameChange() called");
-		this.setState({name: event.target.value});
-	}
 	
 
 
@@ -45,30 +27,21 @@ class UIComponent extends Component {
 		return (
 			<div>
 				<h1>Docker demo - web</h1>
-				
-				<div>
-					<label>
-					new user:
-					<input type="text" value={this.state.name} onChange={this.handleNameChange} />
-					</label>
-					<button onClick={this.addUser}>Add user</button>
-				</div>
-
-
-                {/* <button onClick={this.getUserList}>get user list</button> */}
+                <button onClick={this.getUserList}>get user list</button>
 
 				{this.props.reduxState.MyPageOneState.users && 
 				this.props.reduxState.MyPageOneState.users.map(user => (
-					<div className="margin-auto">
-					<div className="flex-container-flex-start">
-					<div className="flex-container">
-						<img className="myavatar" src='https://i.imgur.com/FEVDPBj.jpg' /> 
-						<button className="ui basic button">{user.name}</button>
-						<button className="ui basic button">{user.email}</button>					
+					<div class="margin-auto">
+					<div class="flex-container-flex-start">
+					<div class="flex-container">
+						<img class="myavatar" src='https://i.imgur.com/FEVDPBj.jpg' /> 
+						<button class="ui basic button">{user.name}</button>
+						<button class="ui basic button">{user.email}</button>					
 					</div>
 					</div>
 					</div>
 				))}
+
 			</div>
 		);
 	}	
