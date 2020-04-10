@@ -11,10 +11,18 @@ function myReducer(state, action) {
   if (typeof state === 'undefined') {
     return initialState
   }
+
+  
   
   let myState = Object.assign({}, state);
   myState.count = (myState.count + 1);
   console.log("reducer.js - myReducer() called - new state: " , myState);  
+
+  if (action.type == 'get_user') {
+    console.log("reducer.js - myReducer() get_user type matched ");
+    myState.users = action.users;
+  }
+
   return myState;
 }
 
