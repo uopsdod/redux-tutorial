@@ -29,6 +29,28 @@ export function getUserList(dispatch) {
 
     // return { type: "get", text: "I want to get sth 2. " }
 }
+
+export function addUser(dispatch, name) {
+    console.log("action.js - addUser() called ");
+    console.log("action.js - addUser() called name: " , name);
+
+    // Make a request for a user with a given ID
+
+    myaxios.post('/demo/add?name=' + name + '&email=' + name + '@gmail.com', {})
+      .then(function (response) {
+        console.log(response);
+
+        getUserList(dispatch);
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    // return { type: "get", text: "I want to get sth 2. " }
+}
+
+
   
 // export function increment(index) {
 //     return { type: "increment", text: "I want to increment sth." }
